@@ -1,0 +1,17 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Giriş Yap</h2>
+<form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">Kullanıcı Adı</label>
+        <input type="text" class="form-control" id="username" name="username" title="Kullanıcı Adı" placeholder="Kullanıcı adınızı girin" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Şifre</label>
+        <input type="password" class="form-control" id="password" name="password" title="Şifre" placeholder="Şifrenizi girin" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</form>
+{% endblock %}
