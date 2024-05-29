@@ -1,0 +1,20 @@
+<!-- users/templates/users/admin_add_user.html -->
+{% extends "users/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="mb-4">Yeni Kullanıcı Ekle</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="POST" class="form-horizontal">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-success">Ekle</button>
+                <a href="{% url 'custom_admin' %}" class="btn btn-secondary">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

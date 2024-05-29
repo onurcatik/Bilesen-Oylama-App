@@ -21,14 +21,25 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('custom-admin/', user_views.custom_admin_view, name='custom_admin'),  # Custom admin URL
+    # path('custom-admin/', user_views.custom_admin_view, name='custom_admin'),  # Custom admin URL
     path('register/', user_views.register, name='register'),
     path('login/', user_views.user_login, name='login'),
     path('logout/', user_views.user_logout, name='logout'),
     path('', user_views.home, name='home'),
     path('about/', user_views.about, name="about"),
+    path('profile', user_views.about, name="profile"),
+    path('custom-admin/', user_views.custom_admin, name='custom_admin'),
+    path('admin-edit-user/<int:user_id>/', user_views.admin_edit_user, name='admin_edit_user'),
+    path('admin-delete-user/<int:user_id>/', user_views.admin_delete_user, name='admin_delete_user'),
+    path('admin-add-user/', user_views.admin_add_user, name='admin_add_user'),
+
 
 ]
 
