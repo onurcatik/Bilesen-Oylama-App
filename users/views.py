@@ -89,3 +89,6 @@ def custom_admin_view(request):
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+def about(request):
+    return render(request, 'users/about.html')       
