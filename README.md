@@ -1,4 +1,4 @@
-# Oylama-App
+# Bileşen Yükleme Uygulaması
 
 Oylama-App, kullanıcıların kayıt olabileceği, giriş yapabileceği ve çeşitli anket veya oylama etkinliklerine katılabileceği bir oylama platformu sağlamak için Django ile oluşturulmuş bir web uygulamasıdır.
 
