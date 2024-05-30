@@ -11,8 +11,8 @@ Projeyi geliştirme ve test amaçlı olarak yerel makinenizde çalıştırmak i�
 1. **Depoyu Kopyalayın**
 
    ```bash
-   git clone https://github.com/catikonur/Oylama-App.git
-   cd Oylama-App
+   git clone https://github.com/catikonur/Bilesen-Oylama-App.git
+   cd Bilesen-Oylama-App
    ```
 
 2. **Sanal Ortam Oluşturun**
