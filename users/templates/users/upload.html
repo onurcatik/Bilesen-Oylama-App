@@ -1,0 +1,72 @@
+{% extends "users/base.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bileşen Yükleme Sayfası</title>
+    
+  <body>
+    <div class="container my-4">
+      <h1>Bileşen Yükleme Sayfası</h1>
+      <p>Kullanıcıların bileşen yükleyebileceği form</p>
+      <form>
+        <div class="mb-3">
+          <label for="componentCategory" class="form-label">Bileşen kategorilerinin seçimi</label>
+          <select class="form-select" id="componentCategory">
+            <option selected>Kategori seçin...</option>
+            <option value="1">Kategori 1</option>
+            <option value="2">Kategori 2</option>
+            <option value="3">Kategori 3</option>
+            <!-- Gerekirse daha fazla kategori ekleyin -->
+          </select>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Bileşen 1</h5>
+                <input type="file" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Bileşen 2</h5>
+                <input type="file" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Bileşen 3</h5>
+                <input type="file" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Bileşen 4</h5>
+                <input type="file" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Bileşen 5</h5>
+                <input type="file" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <!-- Gerekirse daha fazla bileşen ekleyin -->
+        </div>
+      </form>
+      <p class="mt-4">Bileşen Listeleme Sayfası</p>
+    </div>
+</html>
+{% endblock %}

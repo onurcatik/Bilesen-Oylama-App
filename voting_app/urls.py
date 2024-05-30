@@ -33,15 +33,19 @@ urlpatterns = [
     path('login/', user_views.user_login, name='login'),
     path('logout/', user_views.user_logout, name='logout'),
     path('', user_views.home, name='home'),
-    path('about/', user_views.about, name="about"),
-    path('profile', user_views.about, name="profile"),
+    path('about/', user_views.about, name='about'),
+    path('profile/', user_views.profile, name='profile'),
     path('custom-admin/', user_views.custom_admin, name='custom_admin'),
     path('admin-edit-user/<int:user_id>/', user_views.admin_edit_user, name='admin_edit_user'),
     path('admin-delete-user/<int:user_id>/', user_views.admin_delete_user, name='admin_delete_user'),
     path('admin-add-user/', user_views.admin_add_user, name='admin_add_user'),
+    path('upload/', user_views.upload_views, name='upload'),
 
 
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

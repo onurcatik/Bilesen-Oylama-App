@@ -8,8 +8,11 @@ from django.contrib.admin.views.decorators import staff_member_required
 from .forms import CustomUserCreationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, login_required
 from .forms import AddUserForm, EditUserForm
+from .forms import UserUpdateForm, ProfileUpdateForm
+from .models import Profile
+
 
 def register(request):
     if request.method == 'POST':
@@ -96,6 +99,34 @@ def user_logout(request):
 def about(request):
     return render(request, 'users/about.html')
 
+@login_required
+def profile(request):
+    user = request.user
+    if not hasattr(user, 'profile'):
+        Profile.objects.create(user=user)
+        
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=user.profile)
+        
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateForm(instance=user)
+        p_form = ProfileUpdateForm(instance=user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+    
+    return render(request, 'users/profile.html', context)
+
+
+
 
 def admin_check(user):
     return user.is_staff
@@ -155,5 +186,14 @@ def admin_delete_user(request, user_id):
         'user': user,
     }
     return render(request, 'users/admin_delete_user.html', context)
+
+@login_required
+
+def upload_views(request):
+    return render(request, 'users/upload.html')
+
+
+
+
 
        

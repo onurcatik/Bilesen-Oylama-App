@@ -36,7 +36,10 @@
               <a class="nav-link" href="{% url 'logout' %}">Çıkış Yap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'profile' %}">Hoş geldiniz {{ request.user }}</a>
+              <a class="nav-link" href="{% url 'profile' %}"> {{ request.user }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'upload' %}">Bileşen Yükle</a>
             </li>
             {% if user.is_staff %}
             <li class="nav-item">
@@ -55,6 +58,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">Hakkında</a>
             </li>
+
+
           </ul>
         </div>
       </div>
