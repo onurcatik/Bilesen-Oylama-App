@@ -29,7 +29,7 @@ build/
 
 # If your build process includes running collectstatic, you might want to include these directories:
 staticfiles/
-media/
+# media/
 
 # Django specific:
 *.log
